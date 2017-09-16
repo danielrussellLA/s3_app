@@ -1,20 +1,34 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
-import Test from '@/components/Test'
+import Home from '@/components/Home'
+import Article from '@/components/Article'
+import Category from '@/components/Category'
+
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [{
+  routes: [
+    {
         path: '/',
-        name: 'Hello',
-        component: Hello
+        name: 'Home',
+        component: Home
     },
     {
-        path: '/test',
-        name: 'Test',
-        component: Test
+        path: '/:category',
+        name: 'Category',
+        component: Category
+    },
+    {
+        path: '/:category/:title',
+        name: 'Article',
+        component: Article
+    },
+    {
+        path: '*',
+        name: 'Default',
+        component: Home,
+        redirect: '/'
     }
   ]
 })

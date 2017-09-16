@@ -1,15 +1,17 @@
 <template>
-<div class="test">
-  <h1>{{ test }}</h1>
+<div class="home">
+  <h1>home</h1>
 </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
-  name: 'test',
+  name: 'home',
   data () {
     return {
-      test: 'test'
+
     }
   }
 }
